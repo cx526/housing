@@ -1,0 +1,44 @@
+page {
+    font-size: 24rpx;
+}
+/* nav */
+.nav-box {
+    box-sizing: border-box;
+    padding-left: 24rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-bottom: 1px solid #ccc;
+    color: #666;
+}
+.nav {
+    height: 100%;
+}
+.nav scroll-view {
+    height: 100%;
+    white-space: nowrap;
+}
+.nav .nav-item {
+    display: inline-block;
+    width: 33.33%;
+    text-align: center;
+}
+.active {
+    color: #000 !important;
+    font-weight: bolder !important;
+}
+/* 图片展示 */
+.picture-show {
+    box-sizing: border-box;
+    padding: 32rpx 0  0 20rpx;
+}
+.picture-show .picture {
+    display: inline-block;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 20rpx 20rpx 0;
+}
+.picture-show .picture image {
+    width: 100%;
+    height: 300rpx;
+    border-radius: 12rpx;
+}

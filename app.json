@@ -1,0 +1,59 @@
+{
+    "pages": [
+        
+        "pages/index/index",
+        "pages/message/message",
+        "pages/city/city",
+        "pages/houses/houses",
+        "pages/mine/mine",
+        "pages/index/houseDetail/lookAll/lookAll",
+        "pages/index/houseDetail/housePlan/housePlan",
+        "pages/index/houseDetail/dynamicMore/dynamicMore",
+        "pages/index/houseDetail/houseDetail",
+        "pages/index/houseDetail/appointment/appointment",
+        "pages/index/houseDetail/housesPhoto/housesPhoto",
+        "pages/calculator/calculator",
+        "pages/findhouse/findhouse",
+        "pages/hot/hot",
+        "pages/mine/contactUs/contactUs",
+        "pages/mine/register/register",
+        "pages/index/houseDetail/commonMore/commonMore",
+        "pages/mine/attentionHouse/attentionHouse",
+        "pages/houseVideo/houseVideo",
+        "pages/mine/login/login",
+        "pages/hot/listcontext/listcontext"
+        
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "房源",
+        "backgroundTextStyle": "light"
+    },
+    "tabBar": {
+        "backgroundColor": "#ffffff",
+        "borderStyle": "black",
+        "color": "#666666",
+        "selectedColor": "#d81e06",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "/images/index.png",
+                "selectedIconPath": "/images/index-active.png"
+            },
+            {
+                "pagePath": "pages/message/message",
+                "text": "在线咨询",
+                "iconPath": "/images/message.png",
+                "selectedIconPath": "/images/message-active.png"
+            },
+            {
+                "pagePath": "pages/mine/mine",
+                "text": "我的",
+                "iconPath": "/images/profile.png",
+                "selectedIconPath": "/images/profile-active.png"
+            }
+        ]
+    }
+}

@@ -1,0 +1,175 @@
+page {
+    font-size: 24rpx;
+}
+.commentContainer {
+    box-sizing: border-box;
+    padding-bottom: 80rpx;
+    
+}
+/* 头部 */
+.header-box {
+    box-sizing: border-box;
+    padding: 24rpx;
+    display: flex;
+    align-items: center;
+}
+.header image {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}
+.header-box .text {
+    flex: 1;
+    box-sizing: border-box;
+    padding-left: 36rpx;
+}
+.header-box .text .title {
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #000
+}
+.header-box .text .area {
+    font-size: 24rpx;
+    color: #333;
+    margin-top: 24rpx;
+}
+.header-box .right image {
+    width: 30rpx;
+    height: 30rpx;
+}
+/* 热评 */
+.hot-common .title{
+    box-sizing: border-box;
+    padding:0 24rpx ;
+    line-height: 80rpx;
+    background: #eee;
+    color: #ccc;
+    font-size: 28rpx;
+}
+/* 热评列表 */
+.hot-common .hot {
+    box-sizing: border-box;
+    padding: 24rpx;
+    display: flex;
+    /* align-items: center; */
+    border-bottom: 1px solid #eee;
+}
+.hot-common .headPhono image    {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+.hot-common .commonInfo {
+    flex: 1;
+    box-sizing: border-box;
+    padding-left: 24rpx;
+}
+.hot-common .commonInfo .name {
+    font-size: 28rpx;
+    color: #333;
+}
+.hot-common .commonInfo .content {
+    font-size: 28rpx;
+    color: #666;
+    margin-top: 12rpx;
+}
+.hot-common .commonInfo .time {
+    font-size: 24rpx;
+    color: #ccc;
+     margin-top: 12rpx;
+}
+/* 点赞回复功能 */
+/* .hot-common .feature {
+    position: relative;
+    top: 40rpx;
+}
+.hot-common .feature image {
+    width: 30rpx;
+    height: 30rpx;
+    vertical-align: middle;
+    margin-right: 12rpx;
+}
+.hot-common .feature text {
+    margin-right: 10rpx;
+}
+.hot-common .feature text:last-child {
+    margin-right: 0;
+} */
+/* 底部 */
+.bottom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    line-height: 80rpx;
+    height: 80rpx;
+    border-top: 1px solid #ccc;
+    box-shadow: -1px 1px 1px #ccc;
+    display: flex;
+    background: #fff;
+}
+.bottom .item {
+    flex: 1;
+    text-align: center;
+    align-items: center;
+}
+.bottom image {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 6rpx;
+    vertical-align: middle;
+}
+.bottom text {
+    font-size: 28rpx;
+    position: relative;
+    top: 3rpx;
+}
+/* 评论输入框 */
+.import-box {
+    box-sizing: border-box;
+    height: 80rpx;
+    background: #fff;
+    position: fixed;
+    bottom: 16rpx;;
+    left: 0;
+    width: 100%;
+}
+.import-box view {
+    flex: 1;
+    line-height: 56rpx;
+    border: 1px solid #E45B24;
+    display: flex;
+    margin: 24rpx 16rpx;
+}
+.import-box input {
+    flex: 9;
+    height: 56rpx;
+    box-sizing: border-box;
+    padding-left: 24rpx;
+}
+.import-box button {
+    flex: 2;
+    height: 56rpx;
+    font-size: 28rpx;
+    color: #fff;
+    background: #E45B24;
+    line-height: 56rpx;
+    border-radius: 0 !important;
+}
+.import-box button::after {
+    display: none;
+    border-radius: 0 !important;
+    
+}
+.loadingMore {
+    background: #E45B24;
+    color: #fff;
+    width: 40%;
+    font-size: 24rpx;
+    margin-top: 32rpx
+    
+}
+.loadingMore::after {
+    border: none;
+}

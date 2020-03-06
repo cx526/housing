@@ -1,0 +1,187 @@
+<view class="container">
+	<!-- nav导航 -->
+	<view class="wrapper">
+		<scroll-view scroll-x>
+
+			<view class="nav-item {{currentIndex==0? 'active':''}}" bindtap="tabChoose" data-idx="0">
+				<text>一居({{oneHouse.length || 0}})</text>
+			</view>
+			<view class="nav-item {{currentIndex==1? 'active':''}}" bindtap="tabChoose" data-idx="1">
+				<text>二居({{twoHouse.length || 0}})</text>
+			</view>
+			<view class="nav-item {{currentIndex==2? 'active':''}}" bindtap="tabChoose" data-idx="2">
+				<text>三居({{threeHouse.length || 0}})</text>
+			</view>
+			<view class="nav-item {{currentIndex==3? 'active':''}}" bindtap="tabChoose" data-idx="3">
+				<text>四居({{fourHouse.length || 0}})</text>
+			</view>
+			<view class="nav-item {{currentIndex==4? 'active':''}}" bindtap="tabChoose" data-idx="4">
+				<text>五居({{fiveHouse.length || 0}})</text>
+			</view>
+			<view class="nav-item {{currentIndex==5? 'active':''}}" bindtap="tabChoose" data-idx="5">
+				<text>其他({{otherHouse.length || 0}})</text>
+			</view>
+			<view class="nav-item {{currentIndex==6? 'active':''}}" bindtap="tabChoose" data-idx="6">
+				<text>别墅({{House.length || 0}})</text>
+			</view>
+		</scroll-view>
+	</view>
+	<!-- 内容 -->
+	<!-- 没有数据时 -->
+	<view class="nodata-box" s-if="currentIndex == 0 && oneHouse.length == 0">
+		<view class="nodata">
+			<image src="/images/house.jpg"></image>
+			<text>抱歉,暂时没有该户型信息</text>
+		</view>
+	</view>
+    	<!-- 有数据时 -->
+    <block s-for="item in oneHouse">
+        <view class="data-box" s-if="currentIndex == 0 && oneHouse.length != 0">
+            <view class="data">
+                <view class="data-left">
+                    <image src="{{item.thumb}}" bindtap="previewImg"></image>
+                </view>
+                <view class="data-right">
+                    <text class="main">{{item.title}}</text>
+                    <text class="status">{{res.price?res.price:"待定"}}元/m²</text>
+                    <text class="number">{{res.address}}</text>
+                </view>
+            </view>
+        </view>
+    </block>
+    <!-- 没有数据时 -->
+	<view class="nodata-box" s-if="currentIndex == 1 && twoHouse.length == 0">
+		<view class="nodata">
+			<image src="/images/house.jpg"></image>
+			<text>抱歉,暂时没有该户型信息</text>
+		</view>
+	</view>
+    	<!-- 有数据时 -->
+    <block s-for="item in twoHouse">
+        <view class="data-box" s-if="currentIndex == 1 && twoHouse.length != 0">
+            <view class="data">
+                <view class="data-left">
+                    <image src="{{item.thumb}}" bindtap="previewImg"></image>
+                </view>
+                <view class="data-right">
+                    <text class="main">{{item.title}}</text>
+                    <text class="status">{{res.price?res.price:"待定"}}元/m²</text>
+                    <text class="number">{{res.address}}</text>
+                </view>
+            </view>
+        </view>
+    </block>
+    <!-- 没有数据时 -->
+	<view class="nodata-box" s-if="currentIndex == 2 && threeHouse.length == 0">
+		<view class="nodata">
+			<image src="/images/house.jpg"></image>
+			<text>抱歉,暂时没有该户型信息</text>
+		</view>
+	</view>
+    	<!-- 有数据时 -->
+    <block s-for="item in threeHouse">
+        <view class="data-box" s-if="currentIndex == 2 && threeHouse.length != 0">
+            <view class="data">
+                <view class="data-left">
+                    <image src="{{item.thumb}}" bindtap="previewImg"></image>
+                </view>
+                <view class="data-right">
+                    <text class="main">{{item.title}}</text>
+                    <text class="status">{{res.price?res.price:"待定"}}元/m²</text>
+                    <text class="number">{{res.address}}</text>
+                </view>
+            </view>
+        </view>
+    </block>
+    <!-- 没有数据时 -->
+	<view class="nodata-box" s-if="currentIndex == 3 && fourHouse.length == 0">
+		<view class="nodata">
+			<image src="/images/house.jpg"></image>
+			<text>抱歉,暂时没有该户型信息</text>
+		</view>
+	</view>
+    	<!-- 有数据时 -->
+    <block s-for="item in fourHouse">
+        <view class="data-box" s-if="currentIndex == 3 && fourHouse.length != 0">
+            <view class="data">
+                <view class="data-left">
+                    <image src="{{item.thumb}}" bindtap="previewImg"></image>
+                </view>
+                <view class="data-right">
+                    <text class="main">{{item.title}}</text>
+                    <text class="status">{{res.price?res.price:"待定"}}元/m²</text>
+                    <text class="number">{{res.address}}</text>
+                </view>
+            </view>
+        </view>
+    </block>
+    <!-- 没有数据时 -->
+	<view class="nodata-box" s-if="currentIndex == 4 && fiveHouse.length == 0">
+		<view class="nodata">
+			<image src="/images/house.jpg"></image>
+			<text>抱歉,暂时没有该户型信息</text>
+		</view>
+	</view>
+    	<!-- 有数据时 -->
+    <block s-for="item in fiveHouse">
+        <view class="data-box" s-if="currentIndex == 44 && fiveHouse.length != 0">
+            <view class="data">
+                <view class="data-left">
+                    <image src="{{item.thumb}}" bindtap="previewImg"></image>
+                </view>
+                <view class="data-right">
+                    <text class="main">{{item.title}}</text>
+                    <text class="status">{{res.price?res.price:"待定"}}元/m²</text>
+                    <text class="number">{{res.address}}</text>
+                </view>
+            </view>
+        </view>
+    </block>
+    <!-- 没有数据时 -->
+	<view class="nodata-box" s-if="currentIndex == 5 && otherHouse.length == 0">
+		<view class="nodata">
+			<image src="/images/house.jpg"></image>
+			<text>抱歉,暂时没有该户型信息</text>
+		</view>
+	</view>
+    	<!-- 有数据时 -->
+    <block s-for="item in otherHouse">
+        <view class="data-box" s-if="currentIndex == 5 && otherHouse.length != 0">
+            <view class="data">
+                <view class="data-left">
+                    <image src="{{item.thumb}}" bindtap="previewImg"></image>
+                </view>
+                <view class="data-right">
+                    <text class="main">{{item.title}}</text>
+                    <text class="status">{{res.price?res.price:"待定"}}元/m²</text>
+                    <text class="number">{{res.address}}</text>
+                </view>
+            </view>
+        </view>
+    </block>
+    <!-- 没有数据时 -->
+	<view class="nodata-box" s-if="currentIndex == 6 && spcialHouse.length == 0">
+		<view class="nodata">
+			<image src="/images/house.jpg"></image>
+			<text>抱歉,暂时没有该户型信息</text>
+		</view>
+	</view>
+    	<!-- 有数据时 -->
+    <block s-for="item in spcialHouse">
+        <view class="data-box" s-if="currentIndex == 6 && spcialHouse.length != 0">
+            <view class="data">
+                <view class="data-left">
+                    <image src="{{item.thumb}}" bindtap="previewImg"></image>
+                </view>
+                <view class="data-right">
+                    <text class="main">{{item.title}}</text>
+                    <text class="status">{{res.price?res.price:"待定"}}元/m²</text>
+                    <text class="number">{{res.address}}</text>
+                </view>
+            </view>
+        </view>
+    </block>
+
+	
+
+</view>

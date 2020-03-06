@@ -1,0 +1,115 @@
+page {
+    font-size: 24rpx;
+}
+/* 标题 */
+.title-box {
+    box-sizing: border-box;
+    padding: 16rpx 24rpx;
+}
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.title-left {
+    flex: 2;
+    text-align: left
+}
+.title-left text {
+    display: block;
+    color: #666;
+}
+.title-left .main-title {
+    color: #333;
+    font-size: 32rpx;
+    margin-bottom: 8rpx;
+    font-weight: bold;
+}
+.title-right {
+    flex: 1;
+    text-align: right;
+    position: relative;
+    top: 4rpx;
+}
+.title-right image {
+    width: 30rpx;
+    height: 30rpx;
+    position: relative;
+    right: 6rpx;
+    margin-bottom: 8rpx;
+}
+.title-right text {
+    display: block;
+    color: #666;
+}
+/* 分割线 */
+.line {
+    width: 100%;
+    height: 2px;
+    background: #ccc;
+}
+/* 基本信息 */
+.info-box {
+    box-sizing: border-box;
+    padding: 24rpx 24rpx 0;
+}
+.info-box view {
+    margin-bottom: 12rpx;
+    font-size: 28rpx;
+}
+.info-title text {
+    font-size: 30rpx;
+    color: #333;
+}
+.common {
+    display: flex;
+    justify-content: flex-start;
+    /* align-items: center; */
+}
+.common-left {
+    flex: 3;
+    text-align: left;
+    color: #ccc
+}
+.common-left text {
+    letter-spacing: 10rpx;
+}
+.common-right {
+    flex: 5;
+    text-align: left;
+    color: #333
+}
+.common .common-price {
+    color: #E45B24;
+    font-size: 30rpx;
+    font-weight: bolder;
+}
+.common .common-address {
+    font-size: 24rpx;
+    color: #E45B24;
+    position: relative;
+    top: 3rpx;
+}
+.common image {
+    width: 30rpx;
+    height: 30rpx;
+    vertical-align: middle;
+}
+/* 配套设施 */
+.facility-box {
+    box-sizing: border-box;
+    padding: 24rpx
+}
+
+.facility-content {
+    font-size: 26rpx;
+    color: #333;
+    margin-top: 18rpx;
+}
+.facility-content view {
+    width: 100%;
+    overflow: hidden;
+}
+.facility-content view text:first-child{
+    color: #E45B24
+}

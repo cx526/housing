@@ -1,0 +1,108 @@
+<view class="container">
+	<!-- 广告图 -->
+	<view class="advertising">
+		<image src="/images/indexbanner.jpg"></image>
+	</view>
+	<!-- 搜索框 -->
+	<view class="search-box">
+		<!-- 地区 -->
+		<!-- 点击跳转到/pages/city/city -->
+		<view class="area">
+			<text>{{res.curr.areaname}}</text>
+			<image src="/images/bottom.png" class="icon-bottom"></image>
+		</view>
+		<!-- 搜索 -->
+		<!-- 跳转到/pages/houses/houses -->
+		<view class="search" bindtap="findHouses">
+			<view class="search-item">
+				<image src="/images/search.png" class="icon-search"></image>
+				<input type="text" class="search-input" placeholder="为您找好房" placeholder-class="placeholder" disabled />
+			</view>
+		</view>
+	</view>
+	<!-- nav -->
+	<view class="nav-box">
+		<!-- 跳转到house页面 -->
+		<view class="nav-item" bindtap="newHouse">
+			<image src="/images/indexhouse.png"></image>
+			<text>新房</text>
+		</view>
+		<!-- 跳转到houseVideo页面 -->
+		<view class="nav-item" bindtap="houseVideo">
+			<image src="/images/count.png"></image>
+			<text>视频展览</text>
+		</view>
+		<!-- 跳转到findhouse页面 -->
+		<view class="nav-item">
+			<image src="/images/find.png" bindtap="findhouse"></image>
+			<text>帮我找房</text>
+		</view>
+		<!-- 跳转到hot页面 -->
+		<view class="nav-item">
+			<image src="/images/hot.png" bindtap="hot"></image>
+			<text>楼市热点</text>
+		</view>
+	</view>
+	<!-- line -->
+	<view class="line"></view>
+	<!-- 楼房列表 -->
+	<view class="houses-box">
+		<view class="houses">
+			<!-- 标题 -->
+			<view class="title">
+				<text>推荐楼盘</text>
+			</view>
+			<!-- 列表 -->
+			<!-- 跳转到推荐楼盘详情(houseDetail)页面 -->
+			<block s-for="item,index in res.newhouse" > 
+                <view class="houses-item" bindtap="houseDetail"  data-index="{{index}}">
+                    <!-- 左半边 -->
+                    <view class="houses-left">
+                        <!-- {{item.thumb}} -->
+                        <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575520933961&di=97580310f9cce441cf693a9305a899fc&imgtype=0&src=http%3A%2F%2Fpccoo.cn%2Fpost%2F20130307%2F20130307113653348.jpg"></image>
+                    </view>
+                    <!-- 右半边 -->
+                    <view class="houses-right">
+                        <!-- 标题 -->
+                        <view class="item-title">
+                            <text>{{item.title}}</text>
+                        </view>
+                        <!-- 详情 -->
+                        <view class="detail">
+                            <text>{{item.tedian}}</text>
+                            
+                            <text class="area">建面:{{item.lp_totalarea}}m</text><sup>2</sup>
+                        </view>
+                        <!-- 在售情况 -->
+                        <view class="sell">
+                            <text class="onSale" s-if="res.newhouse[index].typeid == 1">待售</text>
+                            <text class="onSale" s-if="res.newhouse[index].typeid == 2">在售</text>
+                            <text class="onSale" s-if="res.newhouse[index].typeid == 3">尾盘</text>
+                            <text class="onSale" s-if="res.newhouse[index].typeid == 4">售完</text>
+                            <text>{{item.tedian}}</text>
+                            <!-- <text s-if="res.newhouse[index].lpts == 1">小户型</text>
+                            <text s-if="res.newhouse[index].lpts == 2">公园地产</text>
+                            <text s-if="res.newhouse[index].lpts == 3">学区房</text>
+                            <text s-if="res.newhouse[index].lpts == 4">旅游地产</text>
+                            <text s-if="res.newhouse[index].lpts == 5">投资地产</text>
+                            <text s-if="res.newhouse[index].lpts == 6">海景地产</text>
+                            <text s-if="res.newhouse[index].lpts == 7">经济住宅</text>
+                            <text s-if="res.newhouse[index].lpts == 8">宜居生态地产</text> -->
+                     
+                        </view>
+                        <!-- 价格 -->
+                        <view class="price">
+                            <view class="price-left">
+                                <text class="number">{{item.price}}</text><text>元/m</text><sup>2</sup>
+                            </view>
+                            <!-- <view class="price-right">
+                                <image src="/images/watch.png"></image>
+                                <text class="total">8888</text>
+                            </view> -->
+                        </view>
+                    </view>
+		        </view>
+		</block>
+	</view>
+</view>
+</view>

@@ -1,0 +1,42 @@
+/* 动态 */
+.dynamic-box {
+    box-sizing: border-box;
+    padding: 50rpx;
+}
+.dynamic-context .header image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    vertical-align: sub;
+}
+.dynamic-context .header text {
+    color: #ccc;
+}    
+.dynamic-context .header .name {
+    font-size: 28rpx;
+    color: #666;
+    margin-right: 12rpx;
+}
+.dynamic-title {
+    margin-top: 16rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+.dynamic-content {
+    font-size: 24rpx;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: none;
+    -webkit-box-orient: vertical;
+}
+.active {
+    -webkit-line-clamp: 2 !important;
+    
+
+}
+.dynamic-btn {
+    margin-top: 6rpx;
+    color: #E45B24;
+}

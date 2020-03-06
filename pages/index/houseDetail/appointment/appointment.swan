@@ -1,0 +1,53 @@
+<view class="container">
+    <view class="info-box">
+        <view class="common">
+            <image src="/images/user-name.png"></image>
+            <input type="text" placeholder="请输入您的姓名" bindinput="uesrName"/>
+        </view>
+        <view class="common">
+            <image src="/images/call.png"></image>
+            <input type="number" placeholder="请输入您的联系方式" bindinput="telPhone" />
+        </view>
+        <view class="common">
+            <image src="/images/house.png"></image>
+            <text class="houseName">康美健康小镇</text>
+        </view>
+        <view class="common" style="border-bottom:0px">
+            <image src="/images/clock.png"></image>
+            <view class="watchTime-box">
+                <view class="watchTime">
+                    <text style="margin-right:12rpx;">2019-11-01</text>
+                    <text s-if="currentIndex == 0">12:00以前</text>
+                    <text s-if="currentIndex == 1">12:00-18:00</text>
+                    <text s-if="currentIndex == 2">18:00以后</text>
+                    <text>看房</text>
+                </view>
+                <view class="explain">
+                    <text>改时间为看房意向,最终时间以客户确定为主</text>
+                </view>
+            </view>
+            <picker mode="date" bindchange="dateChoose">
+            <image src="/images/date.png" class="dateImg"></image>
+            </picker>
+        </view>
+        <!-- 选择时间 -->
+        <view class="chooseTime">
+            <view data-idx="0" bindtap="chooseTime" class="{{currentIndex=='0'?'active':''}}">
+                <text>上午</text>
+                <text>12:00以前</text>
+            </view>
+            <view data-idx="1" bindtap="chooseTime" class="{{currentIndex=='1'?'active':''}}">
+                <text>下午</text>
+                <text>12:00-18:00</text>
+            </view>
+            <view data-idx="2" bindtap="chooseTime" class="{{currentIndex=='2'?'active':''}}">
+                <text>晚上</text>
+                <text>18:00以后</text>
+            </view>
+        </view>
+    </view>
+    <!-- 确定预约按钮 -->
+    <view class="btn">
+        <button bindtap="sureAppointment">确定预约</button>
+    </view>
+</view>

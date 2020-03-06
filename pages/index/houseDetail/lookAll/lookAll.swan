@@ -1,0 +1,258 @@
+<view class="container">
+    <!-- 标题 -->
+    <view class="title-box">
+        <view class="title">
+            <view class="title-left">
+                <text class="main-title">{{res.title}}}</text>
+                <!-- <text>区域：{{area}}}</text> -->
+            </view>
+            <view class="title-right" bindtap="openShare">
+                <image src="/images/share.png"></image>
+                <text>分享</text>
+            </view>
+        </view>
+    </view>
+    <!-- 分割线 -->
+    <view class="line"></view>
+    <!-- 基本信息 -->
+    <view class="info-box">
+        <view class="info">
+            <view class="info-title">
+                <text>基本信息</text>
+            </view>
+            <view class="common">
+                <view class="common-left">
+                    <text>楼盘价格</text>
+                </view>
+                <view class="common-right">
+                    <text class="common-price" s-if="res.price == 0">待定</text>
+                    <text class="common-price" s-if="res.price != 0">{{res.price}}元/m²</text>
+                </view>
+            </view>
+            <view class="common">
+                <view class="common-left">
+                    <text>装修类型</text>
+                </view>
+                <view class="common-right">
+                    <text s-if="fitment1">毛坯</text>
+                    <text s-if="fitment2">简装修</text>
+                    <text s-if="fitment3">精装修</text>
+                </view>
+            </view>
+            <view class="common">
+                <view class="common-left">
+                    <text>主力户型</text>
+                </view>
+                <view class="common-right">
+                    <text s-if="!res.lp_type">暂无资料</text>
+                    <text s-if="res.lp_type">{{res.lp_type}}</text>
+                </view>
+            </view>
+            <view class="common">
+                <view class="common-left">
+                    <text>物业类型</text>
+                </view>
+                <view class="common-right">
+                    <text s-if="type1">住宅 </text>
+                    <text s-if="type2">公寓 </text>
+                    <text s-if="type3">商铺 </text>
+                    <text s-if="type4">写字楼 </text>
+                    <text s-if="type5">别墅 </text>
+                    <text s-if="type6">商住楼 </text>
+                    <text s-if="type7">其他</text>
+                    
+                </view>
+            </view>
+            <view class="common">
+                <view class="common-left">
+                    <text>户数</text>
+                </view>
+                <view class="common-right">
+                    <text>{{res.lp_number}}</text>
+                </view>
+            </view>          
+
+            <view class="common">
+                <view class="common-left">
+                    <text>建筑面积</text>
+                </view>
+                <view class="common-right">
+                    <text>{{res.lp_area}}</text>
+                </view>
+            </view>
+            <view class="common">
+                <view class="common-left">
+                    <text>产权年限</text>
+                </view>
+                <view class="common-right">
+                    <text>{{res.lp_year}}年</text>
+                </view>
+            </view>
+            <view class="common">
+                <view class="common-left">
+                    <text>绿化率</text>
+                </view>
+                <view class="common-right">
+                    <text>{{res.lp_green}}%</text>
+                </view>
+            </view>
+            <view class="common">
+                <view class="common-left">
+                    <text>容积率</text>
+                </view>
+                <view class="common-right">
+                    <text>{{res.lp_volume}}</text>
+                </view>
+            </view>
+            <view class="common">
+                <view class="common-left">
+                    <text>开发商</text>
+                </view>
+                <view class="common-right">
+                    <text>{{res.kfs}}</text>
+                </view>
+            </view>
+            <view class="common">
+                <view class="common-left">
+                    <text>楼盘地址</text>
+                </view>
+                <view class="common-right">
+                    <image src="/images/location.png"></image>
+                    <text class="common-address">{{res.address}}</text>
+                </view>
+            </view>
+            <view class="common">
+                <view class="common-left">
+                    <text>售楼地址</text>
+                </view>
+                <view class="common-right">
+                    <image src="/images/location.png"></image>
+                    <text class="common-address">{{res.sell_address}}</text>
+                </view>
+            </view>
+            <view class="common">
+                <view class="common-left">
+                    <text>物业公司</text>
+                </view>
+                <view class="common-right">
+                    <text>{{res.lp_company}}</text>
+                </view>
+            </view>
+            <view class="common">
+                <view class="common-left">
+                    <text>物业费</text>
+                </view>
+                <view class="common-right">
+                    <text>{{res.lp_costs}}元/m²</text>
+                </view>
+            </view>
+            <view class="common">
+                <view class="common-left">
+                    <text>规划面积</text>
+                </view>
+                <view class="common-right">
+                    <text>{{res.lp_totalarea}}平方米</text>
+                </view>
+            </view>
+            <view class="common">
+                <view class="common-left">
+                    <text>许可证</text>
+                </view>
+                <view class="common-right">
+                    <text>暂无资料</text>
+                </view>
+            </view>
+            <view class="common">
+                <view class="common-left">
+                    <text>特色</text>
+                </view>
+                <view class="common-right">
+                    <text>{{res.tedian}}</text>
+                </view>
+            </view>
+            <view class="common">
+                <view class="common-left">
+                    <text>交付时间</text>
+                </view>
+                <view class="common-right">
+                    <text>{{res.completion}}}</text>
+                </view>
+            </view>
+            <view class="common">
+                <view class="common-left">
+                    <text>开盘时间</text>
+                </view>
+                <view class="common-right">
+                    <text>{{res.selltime}}</text>
+                </view>
+            </view>
+            <view class="common">
+                <view class="common-left">
+                    <text>联系电话</text>
+                </view>
+                <view class="common-right">
+                    <text>{{res.telephone}}</text>
+                </view>
+            </view>
+
+
+
+
+
+        </view>
+    </view>
+    <!-- 分割线 -->
+    <view class="line"></view>
+    <!-- 配套设施 -->
+    <view class="facility-box">
+        <view class="facility">
+            <view class="info-title">
+                <text>配套设施</text>
+            </view>
+            <view class="facility-content">
+                <view>
+                    <text>学校：</text>
+                    <text>{{res.lp_edu}}}</text>
+                </view>
+                <view>
+                    <text>医疗：</text>
+                    <text>{{res.lp_hospital}}</text>
+                </view>
+                <view>
+                    <text>金融：</text>
+                    <text>{{res.lp_bank}}</text>
+                </view>
+                <view>
+                    <text>交通：</text>
+                    <text>{{res.lp_bus}}</text>
+                </view>
+            </view>  
+        </view>
+    </view>
+    <!-- 分割线 -->
+    <view class="line"></view>
+    <!-- 楼盘简介 -->
+    <view class="facility-box">
+        <view class="facility">
+            <view class="info-title">
+                <text>楼盘简介</text>
+            </view>
+            <view class="facility-content">
+                <text>{{res.introduce}}</text>
+            </view>  
+        </view>
+    </view>
+    <!-- 分割线 -->
+    <!-- <view class="line"></view> -->
+    <!-- 项目介绍 -->
+    <!-- <view class="facility-box">
+        <view class="facility">
+            <view class="info-title">
+                <text>项目介绍</text>
+            </view>
+            <view class="facility-content">
+                <text>项目介绍内容详解</text>
+            </view>  
+        </view>
+    </view> -->
+</view>  

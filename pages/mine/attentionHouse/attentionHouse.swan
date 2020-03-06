@@ -1,0 +1,29 @@
+<view class="container">
+    <view class="info">
+        *目前关注1个新房
+    </view>
+    <!-- 关注列表 -->
+    <view class="attention">
+        <view class="attention-item" bindtap="attention">
+            <view class="header">
+                <image src="/images/swiper-01.jpg"></image>
+            </view>
+            <view class="main">
+                <view class="title">
+                    <text>大尊儒府</text>
+                </view>
+                <view class="detail">
+                    <text class="area">古城</text>
+                    <text class="number">建面:5700000m²</text>
+                </view>
+                <view class="sell">
+                    <text>在售</text>
+                </view>
+            </view>
+            <view class="price">
+                <text>11000元/m²</text>
+            </view>
+        </view>
+   
+    </view>
+</view>

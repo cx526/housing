@@ -1,0 +1,65 @@
+<view class="container">
+    <!-- nav -->
+    <view class="nav-box">
+        <view class="nav">
+            <scroll-view scroll-x>
+                <!-- <block s-for="item,index in navList">
+                    <view class="nav-item {{currentIndex == index? ' active' : ''}}" bindtap="navToggle" data-idx="{{index}}">{{item}}</view>
+                </block> -->
+                <view class="nav-item {{currentIndex == 0 ? ' active' : ''}}" bindtap="navToggle" data-idx="0" data-catid="26">实景图({{photo[26].length || 0}})</view>
+                <view class="nav-item {{currentIndex == 1 ? ' active' : ''}}" bindtap="navToggle" data-idx="1" data-catid="27">交通图({{photo[27].length || 0}})</view>
+                <view class="nav-item {{currentIndex == 2 ? ' active' : ''}}" bindtap="navToggle" data-idx="2" data-catid="23">效果图({{photo[23].length || 0}})</view>
+                <view class="nav-item {{currentIndex == 3 ? ' active' : ''}}" bindtap="navToggle" data-idx="3" data-catid="25">样板图({{photo[25].length || 0}})</view>
+                <view class="nav-item {{currentIndex == 4 ? ' active' : ''}}" bindtap="navToggle" data-idx="4" data-catid="24">户型图({{photo[24].length || 0}})</view>
+            </scroll-view>
+        </view>
+    </view>
+    <!-- 图片展示 -->
+		<view class="picture-show">
+			<block s-for="item,index in photo[catid]">
+				<view class="picture" bindtap="previewImg" data-idx="{{index}}">
+					<image src="{{item.thumb}}"></image>
+				</view>
+			</block>
+		</view>
+        <!-- 实景图 -->
+    <!-- <view class="picture-show" s-if="currentIndex == 0">
+        <block s-for="item,index in imgUrl">
+            <view class="picture" bindtap="previewImg" data-idx="{{index}}">
+                <image src="{{item}}"></image>
+            </view>
+        </block>
+    </view> -->
+        <!-- 区位图 -->
+    <!-- <view class="picture-show" s-if="currentIndex == 1">
+        <block s-for="item,index in imgUrl">
+            <view class="picture" bindtap="previewImg" data-idx="{{index}}">
+                <image src="{{item}}"></image>
+            </view>
+        </block>
+    </view> -->
+        <!-- 效果图 -->
+    <!-- <view class="picture-show" s-if="currentIndex == 2">
+        <block s-for="item,index in imgUrl">
+            <view class="picture" bindtap="previewImg" data-idx="{{index}}">
+                <image src="{{item}}"></image>
+            </view>
+        </block>
+    </view> -->
+        <!-- 样板图 -->
+    <!-- <view class="picture-show" s-if="currentIndex == 3">
+        <block s-for="item,index in imgUrl">
+            <view class="picture" bindtap="previewImg" data-idx="{{index}}">
+                <image src="{{item}}"></image>
+            </view>
+        </block>
+    </view> -->
+        <!-- 配套图 -->
+    <!-- <view class="picture-show" s-if="currentIndex == 4">
+        <block s-for="item,index in imgUrl">
+            <view class="picture" bindtap="previewImg" data-idx="{{index}}">
+                <image src="{{item}}"></image>
+            </view>
+        </block>
+    </view> -->
+</view>

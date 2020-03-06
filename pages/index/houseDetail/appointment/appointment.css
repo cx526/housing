@@ -1,0 +1,80 @@
+page {
+    font-size: 24rpx;
+}
+.container {
+    border-top: 1px solid #ccc;
+}
+.info-box {
+    box-sizing: border-box;
+    padding: 0 48rpx;
+}
+.info-box .common {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 20rpx 0;
+    position: relative;
+}
+
+.info-box .common image {
+    width: 50rpx;
+    height: 50rpx;
+}
+.info-box .common input {
+    flex: 1;
+    box-sizing: border-box;
+    padding-left: 24rpx;
+    height: 50rpx;
+}
+.houseName {
+    padding-left: 24rpx;
+}
+.watchTime-box {
+    box-sizing: border-box;
+    padding-left: 24rpx;
+}
+.explain {
+    font-size: 20rpx;
+    color: #ccc;
+    margin-top: 12rpx;
+}
+.dateImg {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* 选择时间 */
+.chooseTime view {
+    display: inline-block;
+    margin-right: 24rpx;
+    background: #ccc;
+    color:#333;
+    font-size: 28rpx;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10rpx;
+}
+.chooseTime view text {
+    display: block;
+}
+.active {
+    background: #FF7046 !important;
+}
+/* 预约按钮 */
+.btn button{
+    position: fixed;
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #fff;
+    font-size: 28rpx;
+    background: #E45B24;
+    left: 0;
+    bottom: 0;
+    border-radius: 0;
+}
+.btn button::after {
+    display: none;
+    border-radius: 0;
+}

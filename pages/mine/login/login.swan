@@ -1,0 +1,12 @@
+<view class="container">
+    <view class="register">
+        <input type="text" placeholder="请输入您的用户名" bindinput="username"/>
+        <input type="number" placeholder="请输入您的密码" bindinput="password"/>
+
+        <!-- 确认按钮 -->
+        <button class="btn" bindtap="login">登录</button>
+        <view class="goRegister">
+            <text bindtap="goRegister">未注册账号?</text>
+        </view>
+    </view>
+</view>

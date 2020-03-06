@@ -1,0 +1,17 @@
+.city-container {
+    box-sizing: border-box;
+}
+.city-nav .title {
+    display: block;
+    line-height: 60rpx;
+    background: #ddd;
+    box-sizing: border-box;
+    padding-left: 28rpx;
+}
+.city-nav .city{
+    display: block;
+    line-height: 100rpx;
+    box-sizing: border-box;
+    padding-left: 28rpx;
+    border-bottom: 1px solid #ddd;
+}

@@ -1,0 +1,78 @@
+<view class="commentContainer">
+    <!-- 头部 -->
+    <!-- 点击跳转到houseDetai页面 -->
+    <view class="header-box" bindtap="houseDetai">
+        <view class="header">
+            <image src="{{res.data.info.thumb}}}"></image>
+        </view>
+        <view class="text">
+            <view class="title">{{res.data.info.title}}</view>
+            <view class="area">
+                <text>{{res.data.info.address}}</text>
+            </view>
+        </view>
+        <view class="right">
+            <image src="/images/arrow-right.png"></image>
+        </view>
+    </view>
+    <!-- 近期热评 -->
+    <view class="hot-common">
+        <view class="title">近期热评</view>
+        <!-- 热评列表 -->
+        <block s-for="item in comment">
+            <view class="hot">
+                <!-- 头像 -->
+                <view class="headPhono">
+                    <image src="/images/head.jpeg"></image>
+                </view>
+                <!-- 评论信息 -->
+                <view class="commonInfo">
+                    <!-- 评论人昵称 -->
+                    <view class="name">{{item.username}}</view>
+                    <!-- 评论内容 -->
+                    <view class="content" ><text style="word-wrap:break-word;font-size: 24rpx">{{item.content}}</text></view>
+                    <!-- 评论发表时间-->
+                    <view class="time">{{item.addtime}}</view>
+                </view>
+                <!-- 点赞回复功能 -->
+                <!-- <view class="feature">
+                    <image src="/images/praise.png"></image>
+                    <text>0</text>
+                    <image src="/images/feature.png" bindtap="replay"></image>
+                    <text>0</text>
+                </view> -->
+            </view>
+        </block>
+    </view>
+    <!-- 加载更多按钮#E45B24 -->
+    <button class="loadingMore" disabled="{{flag}}" bindtap="loadingMore">{{btnText}}</button>
+    <!-- 转发/评论/关注 -->
+    <!-- <view class="bottom">
+        <view class="item" bindtap="openShare">
+            <image src="/images/share.png"></image>
+            <text>转发</text>
+        </view>
+        <view class="item" bindtap="inputShow">
+            <image src="/images/feature.png"></image>
+            <text>评论</text>
+            
+        </view>
+        <view class="item" bindtap="attention" s-if="index">
+            <image src="/images/none-attention.png"></image>
+            <text>关注</text>
+        </view>
+        <view class="item" bindtap="attention" s-if="!index">
+            <image src="/images/attention.png"></image>
+            <text>已关注</text>
+        </view>
+    </view> -->
+    <!-- 评论输入框 -->
+    <!-- <view class="import-box" s-if="inputShow">
+        <view>
+            <input type="text" placeholder="我想要发言" focus bindblur="inputHidden"/>
+            <button bindtap="commit">提交</button>
+        </view>
+    </view> -->
+    
+    
+</view>

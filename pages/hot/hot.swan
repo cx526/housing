@@ -1,0 +1,61 @@
+<view class="context">
+    <!-- 搜索框 -->
+    <view class="search-box">
+        <view class="search">
+            <image src="/images/search.png"></image>
+            <input type="text" placeholder="专注为您找好房" placeholder-style="color:#333" bindinput="houseSearch" />
+        </view>
+    </view>
+    <!-- nav -->
+    <view class="nav-box">
+        <view class="nav">
+            <scroll-view scroll-x="">
+                <block s-for="item,index in navList" >
+                    <view class="nav-item" bindtap="navChoose" data-idx = "{{index}}" data-catid="{{item.catid}}">
+                        <text class="{{currentIndex == index? 'active' : ''}}">{{item.catname}}</text>
+                    </view>
+                </block>
+            </scroll-view>
+        </view>
+    </view>
+    <!-- 文章列表 -->
+        <!-- 优质文章 -->
+    <view class="list-content">
+        <!-- 循环的内容 -->
+        <block s-for="item in navContext">
+        <view class="list" bindtap="listcontext" data-itemid="{{item.itemid}}">
+            <view class="list-item ">
+                <view class="list-left">
+                    <view class="title">
+                        {{item.title}}
+                    </view>
+                    <view class="time">
+                        <text>{{item.addtime}}</text>
+                        <!-- <text>阅读数:8888</text> -->
+                    </view>
+                </view>
+                <view class="list-right">
+                    <image src="{{item.thumb}}"></image>
+                </view>
+            </view>
+        </view>
+        </block>
+    </view>
+    <view class="hint" s-if="flag"><text>暂无相关数据</text></view>
+    <!-- 底部咨询 -->
+    <view class="advisory-box">
+        <view class="advisory">
+            <view class="advisory-left">
+                <image src="/images/head.jpeg"></image>
+                <view>
+                    <text>客服A</text>
+                    <text>欢迎咨询</text>
+                </view>
+            </view>
+            <view class="advisory-right">
+                <view class="online" bindtap="onlineRefer">在线咨询</view>
+                <view class="tel" bindtap="call">电话咨询</view>
+            </view>
+        </view>
+    </view>
+</view>

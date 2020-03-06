@@ -1,0 +1,188 @@
+/* 广告图 */
+.advertising {
+    width: 100%;
+    height: 300rpx;
+    background: #333;
+    position: relative;
+    z-index: -1
+}
+.advertising > image {
+    width: 100%;
+    height: 100%
+}
+/* 搜索框 */
+.search-box {
+    width: 90%;
+    margin: -40rpx auto 0;
+    line-height: 70rpx;
+    background: #EFEFEF;
+    border-radius: 8rpx;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    align-items: center;
+}
+  /* 地区 */
+.search-box .area {
+    flex: 3;
+    text-align: center;
+    font-size: 24rpx;
+    box-sizing: border-box;
+    height: 70rpx;
+}
+.icon-bottom {
+    width: 20rpx;
+    height: 20rpx;
+    margin-left: 16rpx;
+}
+  /* 搜索 */
+
+.search {
+    flex: 10;
+    height: 70rpx;
+}
+.search-item {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 50rpx;
+    border-left: 1px solid #666;
+    width: 100%;
+    position: relative;
+    top: 10rpx;
+    padding-left: 20rpx;
+}
+.icon-search {
+    width: 30rpx;
+    height: 30rpx;
+    position: relative;
+    top: -10rpx;
+}
+.search-input {
+    display: inline-block;
+    height: 50rpx;
+    width: 80%;
+    box-sizing: border-box;
+    padding-left: 24rpx;
+    /* line-height: 50rpx; */
+}
+.placeholder {
+    font-size: 20rpx;
+    color: #666
+}
+/* nav */
+.nav-box {
+    width: 100%;
+    box-sizing: border-box;
+    padding:30rpx 0 50rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+.nav-item {
+    flex: 1
+}
+.nav-item image {
+    width: 120rpx;
+    height: 120rpx;
+}
+.nav-item text {
+    display: block;
+    font-size: 24rpx;
+}
+/* line */
+.line {
+    width: 100%;
+    height: 4px;
+    background: #ccc
+}
+/* 楼房列表 */
+.houses-box {
+    box-sizing: border-box;
+    /* padding: 0 30rpx; */
+}
+  /* 标题 */
+.houses-box .title {
+    box-sizing: border-box;
+    padding-left:40rpx;
+    font-size: 28rpx;
+    line-height: 80rpx;
+    border-bottom: 2px solid #ccc;
+    font-weight: bold;
+}
+    /* 列表 */
+.houses-item {
+    box-sizing: border-box;
+    padding: 30rpx;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+        /* 左半边 */
+.houses-left image {
+    width: 240rpx;
+    height: 160rpx
+}
+        /* 右半边 */
+.houses-right {
+    flex: 1;
+    box-sizing: border-box;
+    padding-left: 20rpx;
+}
+/* 标题 */
+.item-title text {
+    font-size: 30rpx;
+}
+/* 详情 */
+.houses-right .detail {
+    font-size: 24rpx;
+}
+.detail text {
+    margin-right: 8rpx;
+}
+.detail .area {
+    margin-right: 0;
+}
+/* 在售情况 */
+.houses-right .sell {
+    font-size: 20rpx;
+    color: #E45B24;
+}
+.houses-right .sell text {
+    margin-right: 8rpx;
+} 
+.houses-right .sell .onSale {
+    display: inline-block;
+    padding: 4rpx 7rpx;
+    background: #E45B24;
+    color: #fff;
+    font-size: 24rpx;
+    border-radius: 6rpx;
+}
+/* 价格 */
+.houses-right .price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 8rpx;
+}
+/* 价格左半边 */
+.houses-right .price-left {
+    font-size: 24rpx;
+    flex: 1
+}
+.houses-right .price-left .number {
+    color: #E45B24;
+    font-weight: bold;
+}
+/* 价格右半边 */
+.houses-right .price .price-right {
+    flex: 1;
+    text-align: right;
+    font-size: 18rpx;
+}
+.houses-right .price .price-right image {
+    width: 30rpx;
+    height: 30rpx;
+    vertical-align: middle;
+}

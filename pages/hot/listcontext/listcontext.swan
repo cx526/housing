@@ -1,0 +1,4 @@
+<view class="container">
+   <rich-text nodes="{{content}}" selectable="true"></rich-text>
+   <!-- <rich-text nodes="{{htmlSnip}}"></rich-text> -->
+</view>

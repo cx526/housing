@@ -1,0 +1,39 @@
+<view class="container">
+    <view class="item">
+        <text class="title">房源类型</text>
+        <picker mode="selector" range="{{houseType}}" value="{{houseIndex}}" style="flex:8" bindchange="houseType">
+            <text>{{houseType[houseIndex]}}</text>
+        </picker>
+    </view>
+    <view class="item">
+        <text class="title">楼盘名称</text>
+        <input type="text" placeholder="请输入楼盘名称" bindinput="title"/>
+    </view>
+    <view class="item">
+        <text class="title">预算</text>
+        <input type="text" placeholder="请输入您的预算" bindinput="budget"/>
+    </view>
+    <view class="item">
+        <text class="title">户型</text>
+        <input type="text" placeholder="请输入您的期望户型" bindinput="huxing"/>
+    </view>
+    <view class="item">
+        <text class="title">区域</text>
+        <input type="text" placeholder="请输入您的期望区域" bindinput="area"/>
+    </view>
+    <view class="item">
+        <text class="title">特殊要求</text>
+        <input type="text" placeholder="请输入您的特殊要求" bindinput="teshu"/>
+    </view>
+    <view class="item">
+        <text class="title">姓名</text>
+        <input type="text" placeholder="请输入您的姓名" bindinput="username"/>
+    </view>
+    <view class="item">
+        <text class="title">联系方式</text>
+        <input type="text" placeholder="请输入您的联系方式" bindinput="telphone"/>
+    </view>
+    <view class="btn">
+        <button hover-class="none" bindtap="save">保存</button>
+    </view>
+</view>

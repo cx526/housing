@@ -1,0 +1,47 @@
+<view class="container">
+    <view class="header">
+        <view class="header-content">
+            <view class="profilePhoto">
+                <image src="/images/head.jpeg"></image>
+            </view>
+            <view class="detail">
+                <view s-if="!loginAuth">
+                    <text class="detail-name" bindtap="login">登录 </text>
+                    <text class="detail-name"> / </text>
+                    <text class="detail-name" bindtap="register">注册</text>
+                </view>
+                <text class="detail-name" style="display: block" s-if="loginAuth">{{username}}</text>
+                <!--  点击跳转到compileInfo页面 -->
+                <text bindtap="compileInfo"  s-if="loginAuth">欢迎您！</text>
+            </view>
+        </view>
+    </view>
+    <!-- list -->
+    <view class="list" s-if="loginAuth">
+        <!-- 跳转到attentionHouse页面 -->
+        <view class="list-item" hover-class="bgActive" bindtap="attentionHouse">
+            <image src="/images/attention.png"></image>
+            <view>我的关注</view>
+            <image src="/images/arrow-right.png"></image>
+        </view>
+        <!-- 点击跳转到contactUs页面 -->
+        <view class="list-item" hover-class="bgActive" bindtap="contactUs">
+            <image src="/images/Us.png"></image>
+            <view>联系我们</view>
+            <image src="/images/arrow-right.png"></image>
+        </view>
+        <!-- 注销登录 -->
+        <view class="list-item" hover-class="bgActive" bindtap="cancel">
+            <image src="/images/cancel.png"></image>
+            <view>注销登录</view>
+            <image src="/images/arrow-right.png"></image>
+        </view>
+    </view>
+    <!-- 未登录时显示 -->
+    <view class="none_login" s-if="!loginAuth">
+        <image src="/images/none_login.png"></image>
+        <view class="hint">
+            <text>您还未登录！</text>
+        </view>
+    </view>
+</view>

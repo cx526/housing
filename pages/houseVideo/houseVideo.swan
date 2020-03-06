@@ -1,0 +1,21 @@
+<view class="container">
+    <video src="{{videoSrc[cur]}}" id="houseVideo" poster="{{poster[cur]}}" ></video>
+    <button class="btn" bindtap="changeSrc" hover-class="none">切换视频</button>
+</view>
+	<!-- 底部咨询 -->
+<view class="advisory-box">
+    <view class="advisory">
+        <view class="advisory-left">
+            <image src="/images/head.jpeg" class="serviceHeader"></image>
+            <!-- <image src="/images/head.jpeg" class="serviceHeader"></image> -->
+            <view>
+                <view class="serveice">客服A</view>
+                <view class="serveice">欢迎咨询</view>
+            </view>
+        </view>
+        <view class="advisory-right">
+            <view class="online" bindtap="online">在线咨询</view>
+            <view class="tel" bindtap="call">电话咨询</view>
+        </view>
+    </view>
+</view>

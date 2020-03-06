@@ -1,0 +1,303 @@
+<view class="container" style="padding-bottom: 65rpx;">
+	<!-- swiper -->
+	<view class="wrap">
+		<swiper indicator-dots indicator-active-color="#fff" autoplay circular>
+			<!-- 点击跳转到楼盘相册页面(housesPhoto) -->
+			<block s-for="item,index in swiperPicture">
+				<swiper-item>
+					<image src="{{item.thumb}}" bindtap="housesPhoto" data-idx="{{index}}"></image>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<!-- 详情 -->
+	<view class="houseDetail-box">
+		<!-- 标题 -->
+		<view class="title">
+			<text>{{res.title}}</text>
+		</view>
+		<!-- 浏览数 -->
+		<view class="watch">
+			<view class="watch-left">
+				<text class="status" s-if="res.typeid == 1">待售</text>
+				<text class="status" s-if="res.typeid == 2">在售</text>
+				<text class="status" s-if="res.typeid == 3">尾盘</text>
+				<text class="status" s-if="res.typeid == 4">售完</text>
+					<text>投资地产</text>
+			</view>
+			<!-- <view class="watch-right">
+				<image src="/images/watch.png"></image>
+				<text>1234</text>
+				<image src="/images/praise.png"></image>
+				<text>0</text>
+			</view> -->
+		</view>
+		<!-- 楼盘详情 -->
+		<view class="detail">
+			<view class="detail-item">
+				<view class="detail-item-left">
+					<text class="item-title">{{res.price}}}元/m²</text>
+					<text>参考均价</text>
+				</view>
+				<view class="detail-item-right"></view>
+			</view>
+			<view class="detail-item" style="flex:1.5">
+				<view class="detail-item-left" style="margin-left:50rpx;">
+					<text class="item-title" s-if="!res.lp_type">暂无资料</text>
+					<text class="item-title" s-if="res.lp_type">1/2/3/4居</text>
+					<text>在售户型</text>
+				</view>
+				<view class="detail-item-right" style="right:50rpx;"></view>
+			</view>
+			<view class="detail-item" style="flex:0.5;">
+				<text class="item-title" s-if="res.typeid == 1">待售</text>
+				<text class="item-title" s-if="res.typeid == 2">在售</text>
+				<text class="item-title" s-if="res.typeid == 3">尾盘</text>
+				<text class="item-title" s-if="res.typeid == 4">售完</text>
+					
+					<text>销售状态</text>
+			</view>
+		</view>
+		<!-- line -->
+		<view class="line"></view>
+		<!-- 楼盘地址 -->
+		<view class="address-box">
+			<view class="address-item">
+				<view class="address-item-left">
+					<text>地址</text>
+				</view>
+				<view class="address-item-right">
+					<image src="/images/location.png"></image>
+					<text>{{res.address}}</text>
+				</view>
+			</view>
+			<view class="address-item">
+				<view class="address-item-left">
+					<text>物业类型</text>
+				</view>
+				<view class="address-item-right">
+					<text>{{res.lp_company}}</text>
+				</view>
+			</view>
+			<view class="address-item">
+				<view class="address-item-left">
+					<text>产权年限</text>
+				</view>
+				<view class="address-item-right">
+					<text>{{res.lp_year}}年</text>
+				</view>
+			</view>
+			<view class="address-item">
+				<view class="address-item-left">
+					<text>绿化率</text>
+				</view>
+				<view class="address-item-right">
+					<text>{{res.lp_green}}%</text>
+				</view>
+			</view>
+			<!-- 按钮 -->
+			<!-- 点击跳转到lookAll页面 -->
+			<view class="checkAll" bindtap="lookAll" style="margin-bottom: 50rpx">
+				<button>查看全部</button>
+			</view>
+			<!-- 变价开盘 -->
+			<!-- <view class="notice-box">
+				<view class="notice-left" bindtap="changePriceShow">
+					<image src="/images/changePrice.png"></image>
+					<text>变价通知</text>
+					<view class="notice-line"></view>
+				</view>
+				<view class="notice-right" bindtap="openingShow">
+					<image src="/images/notice.png"></image>
+					<text>开盘通知</text>
+				</view>
+			</view> -->
+			<!-- 预约看房 -->
+			<!-- <view class="appointment-box">
+				<view class="appointment-left">
+					<text class="appointment-title">预约看房</text>
+					<text>本房24小时随时可以看</text>
+				</view>
+				<view class="appointment-right" bindtap="appointment">
+					<button>立即预约</button>
+				</view>
+			</view> -->
+		</view>
+		<view class="line"></view>
+		<!-- 主力户型 -->
+		<view class="main-box">
+			<view class="main-title">
+				<view class="title-left">
+					<text>主力户型({{houseTypePicture.length}})</text>
+				</view>
+				<!-- 点击跳转到户型图(housePlan) -->
+				<view class="title-right" bindtap="housePlan">
+					<text>查看详情</text>
+					<image src="/images/arrow-right.png"></image>
+				</view>
+			</view>
+			<view class="main-show" style="height: 300rpx">
+				<scroll-view scroll-x style="height: 300rpx">
+					<view class="show-box" bindtap="clickMain" s-for="item,index in houseTypePicture"
+						data-idx="{{index}}">
+						<image src="{{item.thumb}}"></image>
+						<text style="overflow:hidden;text-overflow:ellipsis;white-space: nowrap">{{res.address}}</text>
+						<text class="onSale" s-if="res.typeid == 1">待售</text>
+						<text class="onSale" s-if="res.typeid == 2">在售</text>
+						<text class="onSale" s-if="res.typeid == 3">尾盘</text>
+						<text class="onSale" s-if="res.typeid == 4">售完</text>
+					</view>
+				</scroll-view>
+			</view>
+		</view>
+		<view class="line"></view>
+		<!-- 动态 -->
+		<!-- <view class="dynamic-box"> -->
+		<!-- 动态标题 -->
+		<!-- <view class="main-title">
+				<view class="title-left">
+					<text>动态(5)</text>
+				</view>
+				<view class="title-right" bindtap="dynamicMore">
+					<text>查看更多</text>
+					<image src="/images/arrow-right.png"></image>
+				</view>
+			</view> -->
+		<!-- 动态内容 -->
+		<!-- <view class="dynamic-context" s-for="item,index in dynamicList">
+				<view class="header">
+					<image src="{{item.imgUrl}}"></image>
+					<text class="{{item.name}}"></text>
+					<text>{{item.time}}</text>
+				</view>
+
+				<view class="dynamic-title">
+					<text>{{item.title}}</text>
+				</view>
+
+				<view class="dynamic-content{{!item.isShow?' active':''}}">
+					<text>{{item.content}}</text>
+				</view>
+	
+				<view class="dynamic-btn" bindtap="dynamic" data-idx="{{index}}" s-if="!item.isShow">
+					全文
+				</view>
+				<view class="dynamic-btn" bindtap="dynamic" data-idx="{{index}}"  s-if="item.isShow">
+					收起
+				</view>
+			</view> -->
+		<!-- 
+		</view> -->
+		<view class="line"></view>
+		<!-- 周边配套 -->
+		<view class="circum-box">
+			<view class="circum-title">
+				<text>周边配套</text>
+				<!-- <text>{{res.map[0]}}</text> -->
+			</view>
+			<view class="circum-map">
+				<map id="myMap" style="width: 100%" longitude="{{longitude}}" latitude="{{latitude}}"
+					loading="{{loading}}" enable-scroll="{{enableScroll}}" bindtap="openLocation" type="primary">
+				</map>
+			</view>
+		</view>
+		<view class="line"></view>
+		<!-- 评论 -->
+		<view class="comment-box">
+			<!-- 评论标题 -->
+			<view class="main-title">
+				<view class="title-left">
+					<text>评论({{comment.length}})</text>
+				</view>
+				<!-- 跳转到commonMore页面 -->
+				<view class="title-right" bindtap="commonMore">
+					<text>查看更多</text>
+					<image src="/images/arrow-right.png"></image>
+				</view>
+			</view>
+			<!-- 评论内容 -->
+			<view class="common-content" s-if="comment.length == 0">
+                <text>暂无楼盘评价</text>
+            </view>
+
+			<view class="dynamic-context" s-for="item,index in comment">
+				<!-- 头像区域 -->
+				<view class="header">
+					<image src="/images/head.jpeg"></image>
+					<text class="name">{{item.username}}</text>
+					<text>{{item.addtime}}</text>
+				</view>
+				<!-- 内容 -->
+				<view class="dynamic-content{{!item.isShow?' active':''}}">
+					<text>{{item.content}}</text>
+				</view>
+				<!-- 点击显示或者隐藏全部留言内容 -->
+				<view class="dynamic-btn" bindtap="showAll" s-if="!item.isShow" data-idx="{{index}}">
+					全文
+				</view>
+				<view class="dynamic-btn" bindtap="showAll" s-if="item.isShow" data-idx="{{index}}">
+					收起
+				</view>
+			</view>
+			<!-- 评论内容输入框 -->
+			<view class="conmon-import">
+				<input type="text" placeholder="点击发表评论内容" placeholder-style="color:#333" bindinput="commentContext" value="{{commentContext}}""/>
+				<button bindtap="sendComment">发送</button>
+			</view>
+		</view>
+		<!-- 底部咨询 -->
+		<cover-view class="advisory-box">
+			<cover-view class="advisory">
+				<cover-view class="advisory-left">
+					<cover-image src="/images/head.jpeg" class="serviceHeader"></cover-image>
+					<!-- <image src="/images/head.jpeg" class="serviceHeader"></image> -->
+					<cover-view>
+						<cover-view class="serveice">客服A</cover-view>
+						<cover-view class="serveice">欢迎咨询</cover-view>
+					</cover-view>
+				</cover-view>
+				<cover-view class="advisory-right">
+					<cover-view class="online" bindtap="online">在线咨询</cover-view>
+					<cover-view class="tel" bindtap="call">电话咨询</cover-view>
+				</cover-view>
+			</cover-view>
+		</cover-view>
+
+		<!-- 变价通知隐藏框 -->
+		<!-- <view class="changeprice-mark" s-if="changePrice" catchtap="closeChangePrice"></view>
+		<view class="changeprice-box" s-if="changePrice">
+			<view class="changeprice">
+				<view class="changeprice-title">
+					<text>变价通知</text>
+				</view>
+				<view class="changeprice-warn">
+					<text>订阅变价通知,不再错过降价</text>
+				</view>
+				<view class="changeprice-tel">
+					<input type="number" bindinput="userTel" />
+				</view>
+				<view class="changeprice-btn" hover-class="none" bindtap="changePriceNotice">
+					<button>确定</button>
+				</view>
+			</view>
+		</view> -->
+		<!-- 开盘通知隐藏框 -->
+		<!-- <view class="opening-mark" s-if="opening" catchtap="closeOpening"></view>
+		<view class="opening-box" s-if="opening">
+			<view class="opening">
+				<view class="opening-title">
+					<text>开盘通知</text>
+				</view>
+				<view class="opening-warn">
+					<text>订阅开盘通知,不再错过团购</text>
+				</view>
+				<view class="opening-tel">
+					<input type="number" bindinput="userPhone" />
+				</view>
+				<view class="opening-btn" hover-class="none" bindtap="subscription">
+					<button>确定</button>
+				</view>
+			</view>
+		</view> -->
+	</view>
+</view>

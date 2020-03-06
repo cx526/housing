@@ -1,0 +1,77 @@
+.container {
+    box-sizing: border-box;
+    padding: 24rpx;
+}
+#houseVideo {
+    width: 100%;
+}
+.btn {
+    background: #E45B24;
+    color: #fff;
+    margin-top: 24rpx;
+}
+.btn::after {
+    display: none;
+}
+/* 底部咨询 */
+.advisory-box {
+    box-sizing: border-box;
+    padding: 18rpx 12rpx;
+    /* border-top: 1px solid #ccc; */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: -1px -1px 1px #eee
+}
+.advisory {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.advisory-left,
+.advisory-right {
+    flex: 1;
+    display: flex;
+    box-sizing: border-box;
+}
+.advisory-left  {
+    padding-left: 24rpx;
+}
+.advisory-left .serviceHeader {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.advisory-left .serveice {
+    display: block;
+    font-size: 28rpx;
+    color: #333;
+    width: 120rpx;
+}
+.advisory-left .serveice:last-child {
+    color: #666;
+    font-size: 24rpx;
+    margin-top: 6rpx;
+}
+.advisory-right {
+    text-align: right;
+}
+.advisory-right .online,
+ .advisory-right .tel{
+    box-sizing: border-box;
+    padding: 16rpx;
+    border-radius: 6rpx;
+    color: #fff;
+    width: 50%;
+    text-align: center
+}
+.advisory-right .online {
+    background: #FF7046;
+}
+.advisory-right .tel {
+    background: #E45B24;
+    margin-left: 12rpx;
+}

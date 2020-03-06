@@ -1,0 +1,54 @@
+page {
+    font-size: 24rpx;
+}
+.container {
+    box-sizing: border-box;
+    padding: 0 24rpx;
+}
+.info {
+    color: #ccc;
+    box-sizing: border-box;
+    padding-top: 10rpx;
+}
+/* 关注列表 */
+.attention-item {
+    box-sizing: border-box;
+    padding: 24rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+.header image {
+    width: 200rpx;
+    height: 160rpx;
+}
+.main .title {
+    color: #000;
+    font-size: 30rpx;
+}
+.main {
+    flex: 1;
+    box-sizing: border-box;
+    padding-left: 24rpx;
+}
+.main .detail {
+    font-size: 26rpx;
+    color: #ccc;
+    margin-top: 12rpx;
+}
+.main .sell {
+    display: inline-block;
+    margin-top: 14rpx;
+    box-sizing: border-box;
+    padding: 6rpx 12rpx;;
+    color: #fff;
+    font-size: 24rpx;
+    background: #E45B24;
+    border-radius: 6rpx;
+}
+.price {
+    display: inline-block;
+    color: #E45B24;
+    font-size: 26rpx;
+    font-weight: bolder;
+}

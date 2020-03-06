@@ -1,0 +1,29 @@
+<view class="container">
+	<!-- 动态 -->
+	<view class="dynamic-box">
+		<!-- 动态内容 -->
+		<view class="dynamic-context">
+			<!-- 头像区域 -->
+			<view class="header">
+				<image src="/images/head.jpeg"></image>
+				<text>2018-12-29</text>
+			</view>
+			<!-- 标题 -->
+			<view class="dynamic-title">
+				<text>文章标题</text>
+			</view>
+			<!-- 内容 -->
+			<view class="dynamic-content{{showAll?' active':''}}">
+				<text>我是文章内容我是文章内容我是文章内容我是文章内容我是文章内容我是文章内容我是文章内容我是文章内容我是文章内容我是文章内容</text>
+			</view>
+			<!-- 点击显示或者隐藏全部留言内容 -->
+			<view class="dynamic-btn" bindtap="showAll" s-if="showAll">
+				全文
+			</view>
+			<view class="dynamic-btn" bindtap="showAll" s-if="!showAll">
+				收起
+			</view>
+		</view>
+
+	</view>
+</view>

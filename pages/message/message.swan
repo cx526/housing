@@ -1,0 +1,9 @@
+<view class="container">
+    <!-- <view class="message">
+        <image src="/images/house.jpg"></image>
+        <view>
+            <text>暂无消息通知</text>
+        </view>
+    </view> -->
+    <web-view src="http://p.qiao.baidu.com/cps/chat?siteId=14139812&userId=24311093"></web-view>
+</view>

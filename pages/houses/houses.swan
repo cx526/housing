@@ -1,0 +1,94 @@
+<view class="container">
+	<!-- 广告图 -->
+	<view class="advertising">
+		<image src="/images/indexbanner.jpg"></image>
+	</view>
+	<!-- 搜索框 -->
+	<view class="search-box">
+		<!-- 搜索 -->
+        <image src="/images/search.png" class="icon-search"></image>
+        <input type="text" class="search-input" placeholder="为您找好房" placeholder-class="placeholder" bindinput="searchHouse"/>
+	</view>
+	<!-- 搜索筛选导航 -->
+	<view class="search-nav" >
+        <!-- <picker mode="selector" range="{{areaArr}}" value="{{areaIndex}}" bindchange="areaChange"> -->
+            <view class="filtrate-area" style="flex: 1;position: relative;text-align: center;color: #333" bindtap="cityChoose"> 
+                <text>{{areaArr[areaIndex]}}</text> 
+                <image src="/images/bottom.png"></image>
+            </view>
+        <!-- </picker> -->
+        <picker mode="selector" range="{{priceArr}}" value="{{priceIndex}}" bindchange="priceChange">
+            <view class="filtrate-price">
+                <text>{{priceArr[priceIndex]}}</text>
+                <image src="/images/bottom.png"></image>
+            </view>
+        </picker>
+        <picker mode="selector" range="{{developersArr}}" value="{{developersIndex}}" bindchange="developersChange">
+		<view class="filtrate-developers">
+			<text>{{developersArr[developersIndex]}}</text>
+			<image src="/images/bottom.png"></image>
+		</view>
+        </picker>
+        <picker mode="selector" range="{{moreArr}}" value="{{moreIndex}}" bindchange="moreChange">
+		<view class="filtrate-more">
+			<text>{{moreArr[moreIndex]}}</text>
+			<image src="/images/bottom.png"></image>
+		</view>
+        </picker>
+	</view>
+    <!-- 楼房列表 -->
+	<view class="houses-box">
+		<view class="houses">
+			<!-- 列表 -->
+            <!-- 跳转到楼盘详情页面(houseDetail) -->
+            <block s-for="item,index in res">
+                <view class="houses-item" bindtap="jumpDetail" data-idx = "{{index}}">
+                    <!-- 左半边 -->
+                    <view class="houses-left">
+                        <image src="{{item.thumb}}"></image>
+                    </view>
+                    <!-- 右半边 -->
+                    <view class="houses-right">
+                        <!-- 标题 -->
+                        <view class="item-title">
+                            <text>{{item.title}}</text>
+                        </view>
+                        <!-- 详情 -->
+                        <view class="detail">
+                            <text>琼山</text>
+                            <text>琼山</text>
+                            <text class="area">建面:{{item.lp_area}}m</text><sup>2</sup>
+                        </view>
+                        <!-- 在售情况 -->
+                        <view class="sell">
+                            <text class="onSale" s-if="res[index].typeid == 1">待售</text>
+                            <text class="onSale" s-if="res[index].typeid == 2">在售</text>
+                            <text class="onSale" s-if="res[index].typeid == 3">尾盘</text>
+                            <text class="onSale" s-if="res[index].typeid == 4">售完</text>
+                            <text>{{item.tedian}}</text>
+                            <!-- <text s-if="res[index].lpts == 1">小户型</text>
+                            <text s-if="res[index].lpts == 2">公园地产</text>
+                            <text s-if="res[index].lpts == 3">学区房</text>
+                            <text s-if="res[index].lpts == 4">旅游地产</text>
+                            <text s-if="res[index].lpts == 5">投资地产</text>
+                            <text s-if="res[index].lpts == 6">海景地产</text>
+                            <text s-if="res[index].lpts == 7">经济住宅</text>
+                            <text s-if="res[index].lpts == 8">宜居生态地产</text> -->
+                        </view>
+                        <!-- 价格 -->
+                        <view class="price">
+                            <view class="price-left">
+                                <text class="number">{{item.price}}</text><text>元/m</text><sup>2</sup>
+                            </view>
+                            <!-- <view class="price-right">
+                                <image src="/images/watch.png"></image>
+                                <text class="total">8888</text>
+                            </view> -->
+                        </view>
+                    </view>
+                </view>
+            </block>
+		</view>
+	</view>
+    <view class="hit" s-if="flag"><text>暂无更多数据</text></view>
+</view>

@@ -1,0 +1,14 @@
+<view class="city-container">
+	<view class="city-item">
+		<view class="city-nav" s-for="item,val in result">
+			<text class="title">{{item.letter}}</text>
+            <block s-for="city,index in item.data">
+                <text class="city" bindtap="cityChoose" data-idx="{{index}}" data-val="{{val}}">{{city}}</text>
+            </block>
+		</view>
+		<view class="city-content" s-for="city in item">
+			<text>{{city.data}}</text>
+		</view>
+	</view>
+
+</view>

@@ -1,0 +1,111 @@
+page {
+    font-size: 24rpx
+}
+/* 导航 */
+.nav {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+.nav view {
+    flex: 1;
+    text-align: center;
+    line-height: 70rpx;
+    color: #333;
+    font-size: 28rpx;
+}
+.active {
+    border-bottom: 1px solid #E45B24 !important;
+    color: #E45B24 !important;
+}
+/* 商业贷款 */
+.business-box {
+    box-sizing: border-box;
+    padding: 0 24rpx;
+    justify-content: flex-start
+}
+.business-box .business-loans {
+    font-size: 28rpx;
+    line-height: 80rpx;
+    display: flex;
+    position: relative;
+}
+.business-box .business-loans input {
+    height: 100%;
+    box-sizing: border-box;
+    padding-right: 12rpx;
+    text-align: right;
+}
+.picker {
+    position: absolute;
+    right: 0;
+}
+/* 开始计算按钮 */
+.countBtn {
+    background: #E45B24;
+    color: #fff;
+    margin-top: 36rpx;
+}
+.countBtn::after {
+    display: none;
+}
+.btnAcive {
+    background: #ccc;
+}
+/* 计算结果 */
+.result-box {
+    box-sizing: border-box;
+    padding-top: 80rpx;
+}
+.result-title {
+    box-sizing: border-box;
+    text-align: center;
+    padding: 12rpx 0;
+}
+.result-title text {
+    box-sizing: border-box;
+    padding: 14rpx;
+    border: 1px solid #E45B24;
+    color: #E45B24;
+    
+}
+.result-title text:first-child {
+    border-bottom-left-radius: 6rpx;
+    border-top-left-radius: 6rpx;
+}
+.result-title text:last-child {
+    border-bottom-right-radius: 6rpx;
+    border-top-right-radius: 6rpx;   
+}
+.resultActive {
+    background: #E45B24;
+    color: #fff !important;
+}
+/* 计算结果详情 */
+.result-detail {
+    box-sizing: border-box;
+    padding-top: 64rpx;
+}
+.detail-item {
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    line-height: 80rpx;
+    border-bottom: 1px solid #ccc;
+}
+.detail-left,
+.detail-right {
+    flex: 1;
+}
+.detail-item text {
+    color: #333;
+    font-size: 28rpx;
+}
+.detail-item .main {
+    color: #666
+}
+/* 提示 */
+.notice {
+    margin-top: 32rpx;
+    color: #666;
+    text-align: center;
+}

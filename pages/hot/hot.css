@@ -1,0 +1,166 @@
+page {
+    font-size: 24rpx;
+    box-sizing: border-box;
+    padding-bottom: 80rpx
+}
+.context {
+    box-sizing: border-box;
+    padding-bottom: 65rpx;
+}
+/* 搜索框 */
+.search-box {
+    box-sizing: border-box;
+    padding: 0 24rpx;
+    margin-top: 10rpx;
+}
+.search {
+    box-sizing: border-box;
+    padding-left: 24rpx;
+    line-height: 60rpx;
+    height: 60rpx;
+    display: flex;
+    background: #eee;
+}
+.search image {
+    width: 30rpx;
+    height: 30rpx;
+    margin-top: 15rpx;
+}
+.search input {
+    flex: 1;
+    height: 60rpx;
+    box-sizing: border-box;
+    padding-left: 32rpx;
+}
+/* nav */
+.nav-box {
+    height: 100rpx;
+    line-height: 100rpx;
+    border-bottom: 2px solid #ccc;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 20
+}
+.nav-box scroll-view {
+    width: 100%;
+    white-space: nowrap;
+    height: 100rpx;
+}
+.nav-box .nav-item {
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+    font-size: 32rpx;
+    line-height: 100rpx;
+    color: #666;
+}
+.nav-box .nav-item text {
+    padding-bottom: 28rpx;
+}
+.active {
+    border-bottom: 2px solid #f00 !important;
+}
+/* 文章列表 */
+.list {
+    box-sizing: border-box;
+    padding: 24rpx 0;
+    border-bottom: 1px solid #ccc;
+}
+.list-item {
+    box-sizing: border-box;
+    padding: 0 24rpx;
+    display: flex;
+}
+.list-left {
+    flex: 1;
+    max-width: 70%;
+    box-sizing: border-box;
+    padding-right: 18rpx;
+}
+.list-left .title {
+    font-size: 28rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+}
+.list-left .time {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 50rpx;
+}
+.list-left .time text {
+    flex: 1;
+    color: #ccc;
+}
+.list-left .time text:first-child {
+    text-align: left;
+}
+.list-left .time text:last-child {
+    text-align: right;
+}
+.list-right image{
+    width: 240rpx;
+    height: 160rpx;
+}
+/* 底部咨询 */
+.advisory-box {
+    box-sizing: border-box;
+    padding: 18rpx 12rpx;
+    border-top: 1px solid #ccc;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+}
+.advisory {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.advisory-left,
+.advisory-right {
+    flex: 1;
+    display: flex;
+}
+.advisory-left image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.advisory-left text {
+    display: block;
+    font-size: 28rpx;
+    color: #333
+}
+.advisory-left text:last-child {
+    color: #666;
+    font-size: 24rpx;
+    margin-top: 6rpx;
+}
+.advisory-right {
+    text-align: right;
+}
+.advisory-right view {
+    box-sizing: border-box;
+    padding: 16rpx;
+    border-radius: 6rpx;
+    color: #fff;
+    width: 50%;
+    text-align: center
+}
+.advisory-right .online {
+    background: #FF7046;
+}
+.advisory-right .tel {
+    background: #E45B24;
+    margin-left: 12rpx;
+}
+.hint {
+    text-align: center;
+    margin-top: 24rpx;
+}
